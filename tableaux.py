@@ -22,7 +22,7 @@ class Tree(object):
 		self.label = label
 
 def Inorder(f):
-    # Imprime una formula como cadena dada una formula como arbol
+	# Imprime una formula como cadena dada una formula como arbol
     # Input: tree, que es una formula de logica proposicional
     # Output: string de la formula
 	if f.right == None:
@@ -32,8 +32,8 @@ def Inorder(f):
 	else:
 		return "(" + Inorder(f.left) + f.label + Inorder(f.right) + ")"
 
-def StringtoTree(A):
-    # Crea una formula como tree dada una formula como cadena escrita en notacion polaca inversa
+def string2Tree(A):
+	# Crea una formula como tree dada una formula como cadena escrita en notacion polaca inversa
     # Input: A, lista de caracteres con una formula escrita en notacion polaca inversa
              # letrasProposicionales, lista de letras proposicionales
     # Output: formula como tree
@@ -57,13 +57,25 @@ def imprime_hoja(H):
 			cadena += ", "
 		cadena += Inorder(f)
 	return cadena + "}"
+def complemento(letra):
+	if letra[0] == '-':
+		return letra[1::]
+	else:
+		return '-' + letra
 
 def par_complementario(l):
 	# Esta función determina si una lista de solo literales
 	# contiene un par complementario
 	# Input: l, una lista de literales
 	# Output: True/False
+	verify = []
+	for i in l:
+		if i not in verify:
+			verify.append(i)
+		if complemento(i) in verify:
+			return True
 	return False
+
 
 def es_literal(f):
 	# Esta función determina si el árbol f es un literal

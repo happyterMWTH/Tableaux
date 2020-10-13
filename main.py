@@ -22,3 +22,5 @@ else:
     print('Las hojas abiertas del tableaux son:')
     for l in ta:
         print(T.imprime_hoja(l))
+
+print(T.par_complementario(['p', 'q', '-p', '-q']))
