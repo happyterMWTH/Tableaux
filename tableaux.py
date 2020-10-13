@@ -14,7 +14,7 @@ listaHojas = []
 ##############################################################################
 # Definición de objeto tree y funciones de árboles
 ##############################################################################
-
+#Añadimos un comentario para practicar GitHub
 class Tree(object):
 	def __init__(self, label, left, right):
 		self.left = left
