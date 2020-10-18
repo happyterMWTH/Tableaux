@@ -9,7 +9,7 @@ import tableaux as T
 
 # Fórmula (en notación polaca inversa)
 # para obtener uno de sus tableaux
-formula = "pq>-rO"
+formula = "qpO-sr>-Y--"
 
 # Se crea el tableau
 ta = T.Tableaux(formula)
@@ -22,3 +22,4 @@ else:
     print('Las hojas abiertas del tableaux son:')
     for l in ta:
         print(T.imprime_hoja(l))
+
