@@ -113,8 +113,12 @@ def es_literal(f):
     # Input: f, una fórmula como árbol
     # Output: True/False
     if (f.label == '-'):
-        if (f.right.label not in conectivos and not '-'):
+        if (f.right.label not in conectivos):
             return True
+        elif (f.right.label == '-'):
+            return True
+        else:
+            return False
     elif (f.label in letrasProposicionales):
         return True
     else:
