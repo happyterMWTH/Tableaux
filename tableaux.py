@@ -112,17 +112,16 @@ def es_literal(f):
     # Esta función determina si el árbol f es un literal
     # Input: f, una fórmula como árbol
     # Output: True/False
-    if (f.label == '-'):
-        if (f.right.label not in conectivos):
-            return True
-        elif (f.right.label == '-'):
-            return True
-        else:
+    if (f.label != '-'):
+        if (f.label in conectivos):
             return False
-    elif (f.label in letrasProposicionales):
-        return True
+        else:
+            return True
     else:
-        return False
+        if (f.right.label in conectivos or f.right.label == '-'):
+            return False
+        else:
+            return True
 
 
 def par_complementario(l):
@@ -190,6 +189,9 @@ def clasifica_y_extiende(f, h):
 
     if clase == 'Alfa1':
         aux = [x for x in h if x != f] + [f.right.right]
+        if h in listaHojas:
+            listaHojas.remove(h)
+        listaHojas.append(aux)
         listaHojas.append(aux)
     elif clase == 'Alfa2':
         aux = [x for x in h if x != f] + [f.left] + [f.right]
