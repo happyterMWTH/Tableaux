@@ -113,9 +113,11 @@ def es_literal(f):
     # Input: f, una fórmula como árbol
     # Output: True/False
     if (f.label == '-'):
-        if (f.right.label not in conectivos and not '-'):
+        if (f.right.label not in conectivos and  f.right.label != '-'):
             return True
-    elif (f.label in letrasProposicionales):
+        else:
+            return False
+    elif (f.label not in conectivos):
         return True
     else:
         return False
@@ -146,8 +148,6 @@ def no_literales(l):
 
 
 def clasificacion(f):
-    # clasifica una fórmula como alfa o beta
-    # Input: f, una fórmula como árbol
     # Output: string de la clasificación de la formula
     if(f.label == '-'):
         if(f.right.label == '-'):
@@ -254,4 +254,6 @@ def Tableaux(f):
             clasifica_y_extiende(x, h)
 
     return listaInterpsVerdaderas
+    # clasifica una fórmula como alfa o beta
+    # Input: f, una fórmula como árbol
 
