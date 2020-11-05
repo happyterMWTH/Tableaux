@@ -9,7 +9,9 @@ import tableaux as T
 
 # Fórmula (en notación polaca inversa)
 # para obtener uno de sus tableaux
-formula = "qpO-sr>-Y--"
+A = "sr>-qpO-Y--q-p-YqpOY-Ysr>-qpO-Y--q-p-YqpOY-YO-"
+
+formula = A
 
 # Se crea el tableau
 ta = T.Tableaux(formula)

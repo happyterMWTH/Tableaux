@@ -260,4 +260,5 @@ def Tableaux(f):
             clasifica_y_extiende(x, h)
 
     return listaInterpsVerdaderas
-
+A = String2Tree("q-p-YqpOY")
+print(Inorder(A))
